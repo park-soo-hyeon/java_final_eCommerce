@@ -18,13 +18,32 @@ public class UserRepository {
     private void loadData() {
         User[] users = FileUtil.load(FILE_NAME, User[].class);
 
-        if(users != null) {
-            userList = Arrays.asList(users);
-        }
+        if(users != null)
+            userList = new ArrayList<>(Arrays.asList(users));
     }
 
     public void save(User user) {
         userList.add(user);
         FileUtil.save(FILE_NAME, userList);
+    }
+
+    public User findByEmail(String email) {
+        for(User user : userList) {
+            if (user.getUserEmail().equals(email))
+                return user;
+        }
+        return null;
+    }
+
+    public User findByUserId(String userId) {
+        for(User user : userList) {
+            if (user.getUserId().equals(userId))
+                return user;
+        }
+        return null;
+    }
+
+    public List<User> findAll() {
+        return userList;
     }
 }
