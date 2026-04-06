@@ -1,4 +1,4 @@
-package kr.co.javaex.sec23.repository;
+package kr.co.javaex.sec23.domain;
 
 public class User {
     private String userId;
@@ -8,6 +8,8 @@ public class User {
     private String userEmail;
     private String userStatus;
     private String userCate;
+
+    public User() {}
 
     public User(String userId, String name, String userPw, String userNum, String userEmail, String userStatus, String userCate) {
         this.userId = userId;
@@ -23,27 +25,55 @@ public class User {
         return userId;
     }
 
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUserPw() {
         return userPw;
     }
 
+    public void setUserPw(String userPw) {
+        this.userPw = userPw;
+    }
+
     public String getUserNum() {
         return userNum;
+    }
+
+    public void setUserNum(String userNum) {
+        this.userNum = userNum;
     }
 
     public String getUserEmail() {
         return userEmail;
     }
 
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
     public String getUserStatus() {
         return userStatus;
     }
 
+    public void setUserStatus(String userStatus) {
+        this.userStatus = userStatus;
+    }
+
     public String getUserCate() {
         return userCate;
+    }
+
+    public void setUserCate(String userCate) {
+        this.userCate = userCate;
     }
 }
