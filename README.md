@@ -1,4 +1,4 @@
-# java_final_eCommerce
+# java_final_eCommerce 프로젝트
 # 파일 기반 e-Commerce 시스템 메뉴 구조 및 실행 설명서
 
 ## 1. LLM (AI) 활용 참조 명기
