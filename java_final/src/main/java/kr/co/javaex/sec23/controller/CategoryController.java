@@ -23,7 +23,7 @@ public class CategoryController {
             System.out.println("1. 카테고리 생성");
             System.out.println("2. 카테고리 수정");
             System.out.println("3. 카테고리 삭제");
-            System.out.println("0. 뒤로 가기");
+            System.out.println("0. 뒤로 가기 (메인 메뉴로)");
             System.out.print("메뉴를 선택하세요: ");
 
             String choice = scanner.nextLine();

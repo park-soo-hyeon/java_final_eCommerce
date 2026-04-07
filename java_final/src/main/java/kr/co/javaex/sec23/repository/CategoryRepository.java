@@ -8,28 +8,33 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CategoryRepository {
-    public static final String FILE_NAME = "java_final/resource/categories.json";
+    public static final String FILE_NAME = "java_final/src/main/java/resources/categories.json";
     public static List<Category> categoryList = new ArrayList<>();
+    private static boolean isLoaded = false;
 
     public CategoryRepository() {
-        loadData();
+        if (!isLoaded) {
+            loadData();
+            isLoaded = true;
+        }
     }
 
     private void loadData() {
         Category[] categorys = FileUtil.load(FILE_NAME, Category[].class);
 
-        if (categorys != null)
+        if (categorys != null && categorys.length > 0) {
             categoryList = new ArrayList<>(Arrays.asList(categorys));
+        } else {
+            if (categoryList.isEmpty()) {
+                categoryList.add(new Category(1, null, "전자제품"));
+                categoryList.add(new Category(2, null, "의류"));
 
-        if (categoryList.isEmpty()) {
-            categoryList.add(new Category(1, null, "전자제품"));
-            categoryList.add(new Category(2, null, "의류"));
+                categoryList.add(new Category(11, 1, "컴퓨터/노트북"));
+                categoryList.add(new Category(12, 1, "스마트폰"));
+                categoryList.add(new Category(21, 2, "남성의류"));
 
-            categoryList.add(new Category(11, 1, "컴퓨터/노트북"));
-            categoryList.add(new Category(12, 1, "스마트폰"));
-            categoryList.add(new Category(21, 2, "남성의류"));
-
-            update();
+                update();
+            }
         }
     }
 

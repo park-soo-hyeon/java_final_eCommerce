@@ -1,4 +1,4 @@
-package kr.co.javaex.sec23.controller;
+package kr.co.javaex.sec23;
 
 import kr.co.javaex.sec23.controller.*;
 import kr.co.javaex.sec23.domain.User;

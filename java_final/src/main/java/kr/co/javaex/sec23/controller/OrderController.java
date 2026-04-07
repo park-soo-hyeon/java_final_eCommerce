@@ -30,7 +30,7 @@ public class OrderController {
             System.out.println("\n===== [ 주문 메뉴 ] =====");
             System.out.println("1. 장바구니 선택 상품 주문");
             System.out.println("2. 장바구니 전체 상품 주문");
-            System.out.println("0. 뒤로 가기");
+            System.out.println("0. 뒤로 가기 (메인 메뉴로)");
             System.out.print("메뉴를 선택하세요: ");
 
             String choice = scanner.nextLine();

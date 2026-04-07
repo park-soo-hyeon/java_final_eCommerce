@@ -28,7 +28,7 @@ public class CartController {
             System.out.println("3. 수량 변경");
             System.out.println("4. 선택 상품 삭제");
             System.out.println("5. 장바구니 비우기");
-            System.out.println("0. 뒤로 가기");
+            System.out.println("0. 뒤로 가기 (메인 메뉴로)");
             System.out.print("메뉴를 선택하세요: ");
 
             String choice = scanner.nextLine();
@@ -51,6 +51,7 @@ public class CartController {
                     System.out.println("장바구니를 모두 비웠습니다.");
                     break;
                 case "0":
+                    System.out.println("메인 메뉴로 돌아갑니다.");
                     isRunning = false;
                     break;
                 default:

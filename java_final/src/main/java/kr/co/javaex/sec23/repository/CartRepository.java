@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CartRepository {
-    private static final String FILE_NAME = "java_final/resource/carts.json";
+    private static final String FILE_NAME = "java_final/src/main/java/resources/carts.json";
     private static List<Cart> cartList = new ArrayList<>();
     private static boolean isLoaded = false;
 

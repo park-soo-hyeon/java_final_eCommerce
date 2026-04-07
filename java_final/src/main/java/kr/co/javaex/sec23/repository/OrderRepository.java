@@ -8,22 +8,27 @@ import java.util.Arrays;
 import java.util.List;
 
 public class OrderRepository {
-    private static final String FILE_NAME = "java_final/resource/orders.json";
+    private static final String FILE_NAME = "java_final/src/main/java/resources/orders.json";
     private static List<Order> orderList = new ArrayList<>();
+    private static boolean isLoaded = false;
 
     public OrderRepository() {
-        loadData();
+        if (!isLoaded) {
+            loadData();
+            isLoaded = true;
+        }
     }
 
     private void loadData() {
         Order[] orders = FileUtil.load(FILE_NAME, Order[].class);
 
-        if(orders != null)
+        if(orders != null && orders.length > 0 ) {
             orderList = new ArrayList<>(Arrays.asList(orders));
-
-        if (orderList.isEmpty()) {
-            orderList.add(new Order(1, "user1", 101, "게이밍 노트북", 1500000, 1));
-            update();
+        } else {
+            if (orderList.isEmpty()) {
+                orderList.add(new Order(1, "user1", 101, "게이밍 노트북", 1500000, 1));
+                update();
+            }
         }
     }
 

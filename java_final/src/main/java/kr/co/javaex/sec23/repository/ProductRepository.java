@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ProductRepository {
-    private static final String FILE_NAME = "java_final/resource/products.json";
+    private static final String FILE_NAME = "java_final/src/main/java/resources/products.json";
     private static List<Product> productList = new ArrayList<>();
     private static boolean isLoaded = false;
 
