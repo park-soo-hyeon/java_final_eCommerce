@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CategoryRepository {
-    public static final String FILE_NAME = "categories.json";
-    public List<Category> categoryList = new ArrayList<>();
+    public static final String FILE_NAME = "java_final/resource/categories.json";
+    public static List<Category> categoryList = new ArrayList<>();
 
     public CategoryRepository() {
         loadData();
@@ -20,11 +20,35 @@ public class CategoryRepository {
 
         if (categorys != null)
             categoryList = new ArrayList<>(Arrays.asList(categorys));
+
+        if (categoryList.isEmpty()) {
+            categoryList.add(new Category(1, null, "전자제품"));
+            categoryList.add(new Category(2, null, "의류"));
+
+            categoryList.add(new Category(11, 1, "컴퓨터/노트북"));
+            categoryList.add(new Category(12, 1, "스마트폰"));
+            categoryList.add(new Category(21, 2, "남성의류"));
+
+            update();
+        }
     }
 
     public void save(Category category) {
         categoryList.add(category);
         FileUtil.save(FILE_NAME, categoryList);
+    }
+
+    public void update() {
+        FileUtil.save(FILE_NAME, categoryList);
+    }
+
+    public void delete(int categoryId) {
+        Category categoryToRemove = findCategoryId(categoryId);
+
+        if (categoryToRemove != null) {
+            categoryList.remove(categoryToRemove);
+            update();
+        }
     }
 
     public Category findCategoryId(int categoryId) {

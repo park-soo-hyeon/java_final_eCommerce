@@ -6,18 +6,23 @@ public class Product {
     private String productDesc;
     private int productPrice;
     private int productStock;
-    private String productCategory;
     private String productStatus;
 
     public Product() {}
-    public Product(int productId, String productName, String productDesc, int productPrice, int productStock, String productCategory, String productStatus) {
+    public Product(int productId, String productName, String productDesc, int productPrice, int productStock, String productStatus) {
         this.productId = productId;
         this.productName = productName;
         this.productDesc = productDesc;
         this.productPrice = productPrice;
         this.productStock = productStock;
-        this.productCategory = productCategory;
         this.productStatus = productStatus;
+    }
+    public Product(int productId, String productName, String productDesc, int productPrice, int productStock) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productDesc = productDesc;
+        this.productPrice = productPrice;
+        this.productStock = productStock;
     }
 
     public int getProductId() {
@@ -60,19 +65,19 @@ public class Product {
         this.productStock = productStock;
     }
 
-    public String getProductCategory() {
-        return productCategory;
-    }
-
-    public void setProductCategory(String productCategory) {
-        this.productCategory = productCategory;
-    }
-
     public String getProductStatus() {
         return productStatus;
     }
 
     public void setProductStatus(String productStatus) {
         this.productStatus = productStatus;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "[상품 ID: %d] %s | 가격: %d원 | 재고: %d개 | 상태: %s\n - 상세설명: %s",
+                productId, productName, productPrice, productStock, productStatus, productDesc
+        );
     }
 }

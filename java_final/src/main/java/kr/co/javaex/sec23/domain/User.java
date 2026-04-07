@@ -21,6 +21,16 @@ public class User {
         this.userCate = userCate;
     }
 
+    public User(String userId, String name, String userPw, String userNum, String userEmail, String userCate) {
+        this.userId = userId;
+        this.name = name;
+        this.userPw = userPw;
+        this.userNum = userNum;
+        this.userEmail = userEmail;
+        this.userStatus = "정상";
+        this.userCate = userCate;
+    }
+
     public String getUserId() {
         return userId;
     }

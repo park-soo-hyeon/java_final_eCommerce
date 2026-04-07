@@ -9,6 +9,8 @@ public class Order {
     private int productQuantity;
 
     public Order() {}
+
+    // Controller에서 넘겨주는 7개의 값을 모두 받을 수 있도록 생성자 수정
     public Order(int orderId, String userId, int productId, String productName, int productPrice, int productQuantity) {
         this.orderId = orderId;
         this.userId = userId;
@@ -64,5 +66,14 @@ public class Order {
 
     public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
+    }
+
+    // 만약을 위해 데이터를 예쁘게 출력해주는 toString() 추가
+    @Override
+    public String toString() {
+        return String.format(
+                "[주문 번호: %d] %s (상품 ID: %d) | 결제금액: %d원 | 수량: %d개",
+                orderId, productName, productPrice * productQuantity, productId, productQuantity
+        );
     }
 }

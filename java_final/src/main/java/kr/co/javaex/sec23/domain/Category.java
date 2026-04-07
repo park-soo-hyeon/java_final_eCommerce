@@ -4,17 +4,15 @@ public class Category {
     private int categoryId;
     private Integer categoryParentId;
     private String categoryName;
-    private int categoryAsc;
 
     public Category() {}
-    public Category(int categoryId, Integer categoryParentId, String categoryName, int categoryAsc) {
+    public Category(int categoryId, Integer categoryParentId, String categoryName) {
         this.categoryId = categoryId;
         this.categoryParentId = categoryParentId;
         this.categoryName = categoryName;
-        this.categoryAsc = categoryAsc;
     }
 
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
@@ -22,7 +20,7 @@ public class Category {
         this.categoryId = categoryId;
     }
 
-    public int getCategoryParentId() {
+    public Integer getCategoryParentId() {
         return categoryParentId;
     }
 
@@ -36,13 +34,5 @@ public class Category {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
-    }
-
-    public int getCategoryAsc() {
-        return categoryAsc;
-    }
-
-    public void setCategoryAsc(int categoryAsc) {
-        this.categoryAsc = categoryAsc;
     }
 }
